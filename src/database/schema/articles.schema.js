@@ -14,6 +14,7 @@ const ArticleSchema = new EntitySchema({
         titles: {
             type: 'varchar',
             nullable: false,
+            unique: true,
         },
         content: {
             type: 'text',

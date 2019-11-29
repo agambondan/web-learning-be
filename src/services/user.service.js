@@ -35,7 +35,7 @@ class UserService {
     }
 
     async createUser(user) {
-        return this.userRepository().save(user);
+         return await this.userRepository().save(user);
     }
 
     async deleteUserById(idUser) {
@@ -46,7 +46,7 @@ class UserService {
 
     async updateUser(user) {
         this.findById(user.idUser);
-        return this.userRepository().save(user);
+        return await this.userRepository().save(user);
     }
 }
 
