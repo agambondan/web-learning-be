@@ -11,7 +11,7 @@ class ArticlesService {
     }
 
     async findAll() {
-        return await this.articlesRepository().findAll()
+        return await this.articlesRepository().find()
     }
 
     async findArticlesById(id) {
