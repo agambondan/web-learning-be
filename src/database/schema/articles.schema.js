@@ -30,7 +30,7 @@ const ArticleSchema = new EntitySchema({
             type: 'timestamp',
             nullable: false,
             default: () => 'CURRENT_TIMESTAMP',
-        }
+        },
     },
     relations: {
         category:{
@@ -44,8 +44,8 @@ const ArticleSchema = new EntitySchema({
             type:'many-to-one',
             joinColumn:true,
             eager:false
-        }
-    }
+        },
+    },
 });
 
 export default ArticleSchema;
