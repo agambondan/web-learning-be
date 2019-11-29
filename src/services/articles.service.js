@@ -1,7 +1,7 @@
-import {getRepository} from 'typeorm'
+import {getRepository, Like} from 'typeorm'
 import Articles from '../models/articles.model'
 
-class Articles {
+class ArticlesService {
     articlesRepository() {
         return getRepository(Articles)
     }
@@ -31,10 +31,11 @@ class Articles {
         return await this.articlesRepository().delete(articleToDelete)
     }
 
-    async findArticleByTitle(title) {
-        const articleTitle = await this.findArticlesById(title)
-        return await this.articlesRepository().findOne(articleTitle)
+    async findArticleByTitle(search) {
+        const articleTitle = await this.articlesRepository().find({title:Like(`%${search}%`)})
+        if(!articleTitle) throw ({message:`Name ${search} Not Found`, status: 404})
+        return articleTitle
     }
 }
 
-export default Articles
+export default ArticlesService

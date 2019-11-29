@@ -1,49 +1,51 @@
-import {
-    EntitySchema
-} from 'typeorm'
+import {EntitySchema} from 'typeorm'
 import Articles from '../../models/articles.model'
 
-const Articles = new EntitySchema({
+const ArticleSchema = new EntitySchema({
     name: 'Articles',
     target: Articles,
-    tableName: 'mst_articles',
+    tableName: 'articles',
     columns: {
         id: {
             primary: true,
             type: 'uuid',
             generated: 'uuid',
         },
-        id_category: {
-            type: 'uuid',
-            nullable: true,
-        },
         titles: {
             type: 'varchar',
             nullable: false,
         },
-        contnets: {
+        content: {
             type: 'text',
             nullable: false,
         },
         createdAt: {
             name: 'created_at',
-            type: 'date',
+            type: 'timestamp',
             nullable: false,
             default: () => 'CURRENT_TIMESTAMP',
         },
         updateAt: {
             name: 'update_at',
-            type: 'date',
+            type: 'timestamp',
             nullable: false,
             default: () => 'CURRENT_TIMESTAMP',
-        },
-        createdBy: {
-            name: 'created_by',
-            type: 'uuid',
-            nullable: true,
         }
     },
     relations: {
-
+        category:{
+            target:'Category',
+            type:'many-to-one',
+            joinColumn:true,
+            eager:false
+        },
+        user:{
+            target:'User',
+            type:'many-to-one',
+            joinColumn:true,
+            eager:false
+        }
     }
-})
+});
+
+export default ArticleSchema;
