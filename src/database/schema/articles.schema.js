@@ -30,22 +30,22 @@ const ArticleSchema = new EntitySchema({
             type: 'timestamp',
             nullable: false,
             default: () => 'CURRENT_TIMESTAMP',
-        }
+        },
     },
-    // relations: {
-    //     user:{
-    //         target:'User',
-    //         type:'many-to-one',
-    //         joinColumn:true,
-    //         eager:false,
-    //     },
-    //     category:{
-    //         target:'Category',
-    //         type:'many-to-one',
-    //         joinColumn:true,
-    //         eager:false,
-    //     }
-    //}
+    relations: {
+        category:{
+            target:'Category',
+            type:'many-to-one',
+            joinColumn:true,
+            eager:false
+        },
+        user:{
+            target:'User',
+            type:'many-to-one',
+            joinColumn:true,
+            eager:false
+        },
+    },
 });
 
 export default ArticleSchema;
