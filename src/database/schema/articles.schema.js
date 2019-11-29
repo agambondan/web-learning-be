@@ -33,17 +33,17 @@ const ArticleSchema = new EntitySchema({
         }
     },
     relations: {
-        category:{
-            target:'Category',
-            type:'many-to-one',
-            joinColumn:true,
-            eager:false
-        },
         user:{
             target:'User',
             type:'many-to-one',
             joinColumn:true,
-            eager:false
+            eager:false,
+        },
+        category:{
+            target:'Category',
+            type:'many-to-one',
+            joinColumn:true,
+            eager:false,
         }
     }
 });
