@@ -20,7 +20,7 @@ const ArticlesRoute = Router()
             res.status(500).json({message: error.message})
         }
     })
-    .put('/articles', async (req, res) => {
+    .put('/article', async (req, res) => {
         try {
             const {body} = req
             const article = await articleService.updateArticles(body)
