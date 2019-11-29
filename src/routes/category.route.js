@@ -46,7 +46,7 @@ const categoryRouter = Router()
             });
         }
     })
-    .get('/category/:id?([0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12})', async (req, res) => {
+    .get('/category/:id', async (req, res) => {
         try {
             const {id} = req.params;
             const category = await categoryService.findOneById(id);
@@ -57,7 +57,7 @@ const categoryRouter = Router()
             });
         }
     })
-    .delete('/category/:id?([0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12})', async (req, res) => {
+    .delete('/category/:id', async (req, res) => {
         try {
             const {id} = req.params;
             const category = await categoryService.deleteById(id);

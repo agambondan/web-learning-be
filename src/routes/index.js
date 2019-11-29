@@ -6,4 +6,4 @@ import userRouter from "./user.route";
 export default express.Router()
     .use('/', userRouter)
     .use('/', categoryRouter)
-    .use('/', articlesRouter);
+    .use('/', articlesRouter)

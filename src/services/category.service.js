@@ -27,7 +27,7 @@ class CategoryService {
 
     async findCategoryByNameCategory(search) {
         let Category = await this.CategoryRepository().find({category: Like (`%${search}%`)});
-        if(!Category) throw ({message: `Name ${name} Not Found`, status: 404});
+        if(!Category) throw ({message: `Name ${search} Not Found`, status: 404});
         return Category;
     }
 

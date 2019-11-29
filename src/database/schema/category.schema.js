@@ -21,7 +21,9 @@ const categorySchema = new EntitySchema({
         articles: {
             target: 'Articles',
             type: 'one-to-many',
+            inverseSide:'category',
             joinColumn: true,
+            cascade:true,
             eager: true,
         }
     }
