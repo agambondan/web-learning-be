@@ -20,8 +20,10 @@ const categorySchema = new EntitySchema({
     relations: {
         articles: {
             target: 'Articles',
+            inverseSide:'category',
             type: 'one-to-many',
             joinColumn: true,
+            cascade:true,
             eager: true,
         }
     }

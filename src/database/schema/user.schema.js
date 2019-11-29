@@ -27,15 +27,17 @@ const UserSchema = new EntitySchema({
         email:{
             type: 'varchar',
             nullable: false,
+            unique: true,
         },
         phoneNumber:{
             type: 'int',
             nullable: false,
+            unique:true,
         },
     },
     relations:{
-        posts:{
-            target:'Post',
+        articles:{
+            target:'Articles',
             type:'one-to-many',
             inverseSide:'user',
             joinColumn: true,
