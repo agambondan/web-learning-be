@@ -30,7 +30,7 @@ const UserSchema = new EntitySchema({
             unique: true,
         },
         phoneNumber:{
-            type: 'int',
+            type: 'varchar',
             nullable: false,
             unique:true,
         },

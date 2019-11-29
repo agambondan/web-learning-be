@@ -29,13 +29,14 @@ const UserRouter = Router()
             res.status(error.status).send(error.message);
         }
     })
-    .post('/user', async (req, res) => {
-        try {
+    .post('/user', async (req, res)=>{
+        try{
             let user = {...req.body};
-            let dataUser = await userService.createUser(user)
-            await res.json(dataUser);
-        } catch (error) {
-            res.status(error.status).send(error.message);
+            res.json(await userService.createUser(user));
+        }catch (error) {
+            res.status(500).json({
+                message: error.message
+            });
         }
     })
     .delete('/user', async (req, res) => {
