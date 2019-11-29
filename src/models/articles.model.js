@@ -1,4 +1,4 @@
-export default class articles {
+export default class Articles {
     constructor(id, category, titles, content, creatAt, updateAt, user) {
         this.id = id
         this.category = category

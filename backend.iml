@@ -4,6 +4,11 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+    <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="@types/react-bootstrap" level="application" />
+=======
     <orderEntry type="library" name="nodejs core" level="application" />
+>>>>>>> 1845cda923b0897d4ddf329278d8b34a461d51c3
   </component>
 </module>
